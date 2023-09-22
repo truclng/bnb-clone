@@ -1,21 +1,9 @@
-# Assessment 3 - ReactJS: AirBrB
+# ReactJS: AirBrB
 
 1. Background & Motivation
 2. The Task (Frontend)
 3. The Support (Backend)
 4. Constraints & Assumptions
-5. Teamwork
-6. Marking Criteria
-7. Originality of Work
-8. Submission
-9. Late Submission Policy
-
-## 0. Change Log
-
-* 30/10: Updated Typescript setup instructions
-* 1/11: Updated backend to not overwrite users details when an email already exists on the database.
-* 2/11: Added correct late policy as per course policy and lecture
-* 15/11: Removing (*)
 
 ## 1. Background & Motivation
 
@@ -39,7 +27,7 @@ The requirements describe a series of **screens**. Screens can be popups/modals,
 
 Please note: This assignment, unlike assignment 2, has a lot of functionality available whilst not logged in. Logging in just adds extra functionality. If you're unsure what we mean by this behaviour, you can play around with the Airbnb website for comparison.
 
-### 2.1. Feature Set 1. Admin Auth (10% for solo, 8% for pairs)
+### 2.1. Feature Set 1. Admin Auth
 
 This focuses on the basic user interface to register and log in to the site. Login and registration are required to gain access to making bookings as a guest, leave reviews and to manage your own listings as a host.
 
@@ -65,7 +53,7 @@ This focuses on the basic user interface to register and log in to the site. Log
    * A button exists that will take the user to the screen to view their hosted listings.
    * A button exists that will take the user to the screen to view all listings.
 
-### 2.2. Feature Set 2. Creating & Editing & Publishing a Hosted Listing (16% for solo, 14% for pairs)
+### 2.2. Feature Set 2. Creating & Editing & Publishing a Hosted Listing 
 
 For logged in users, they are able to create their own listings (as a host) that will become visible to all other users who have the option of booking it.
 
@@ -122,7 +110,7 @@ availability: [date1, date2, date3, date4, ...];
 ```
 * (Note: If the listing has more than 1 availability range, aggregate them on the frontend and submit them all to the backend in one go when publishing the listing).
 
-### 2.3. Feature Set 3. Landing Page: Listings and Search (16% for solo, 14% for pairs)
+### 2.3. Feature Set 3. Landing Page: Listings and Search 
 
 When the app loads, regardless of whether a user is logged in or not, they can access the landing screen. The landing screen displays a number of listings that you as a guest may be able to book (on another screen). We recommend you create some listings (`2.2`) with one user account, and then create a second user account to build/test `2.3` so that you can view their listing as a potential booking option.
 
@@ -153,7 +141,7 @@ When the app loads, regardless of whether a user is logged in or not, they can a
 		- If there is more than one listing with the same rating, their order does not matter
 * The search section must have an associated search button that will action the search to reload the results given the new filters.
 
-### 2.4. Feature Set 4. Viewing and Booking Listings (9% for solo, 8% for pairs)
+### 2.4. Feature Set 4. Viewing and Booking Listings 
 
 #### 2.4.1. View a Selected Listing
  * A unique route must exist for this screen that is parameterised on the Listing ID
@@ -186,7 +174,7 @@ When the app loads, regardless of whether a user is logged in or not, they can a
 * Please note: Normally you'd prohibit reviews until after a booking visit is complete, but in this case for simplicity we allow reviews to be left as soon as a booking's status becomes `accepted`.
 * If the user has made more than 1 booking for a given listing, you can use any of their `bookingid`s for the purpose of leaving a review. Just as long as the booking has status `accepted`.
 
-### 2.5. Feature Set 5. Removing a Listing, Managing Booking Requests (9% for solo, 8% for pairs)
+### 2.5. Feature Set 5. Removing a Listing, Managing Booking Requests 
 
 #### 2.5.1. Removing a live listing
  * On the hosted listings screen described in `2.2.1`, add the ability to remove a live listing from being visible to other users. 
@@ -203,7 +191,7 @@ When the app loads, regardless of whether a user is logged in or not, they can a
 	* How much profit has this listing made the owner this year
 	* (Note: When counting the days and profits, inlcude all the bookings, past or future, that have been accepted for this year)
 
-### 2.6. Feature Set 6. Advanced Features (0% for solo, 8% for pairs)
+### 2.6. Feature Set 6. Advanced Features 
 
 #### 2.6.1 Advanced Listing Rating Viewing
 * On hover of star rating a tool tip appears which displays the break down of how many people rated the booking (both in percentage terms and absolute terms) within each star category. (e.g. see Amazon product rating for reference)
@@ -293,7 +281,7 @@ There are several objects that will need to be defined by you using the schema y
 
 This approach we've taken is actually designed to make the assignment _easier_, as it gives you control without having to worry about backend architecture.
 
-### 3.2. The Backend (provided)
+### 3.2. The Backend
 
 You are prohibited from modifying the backend. No work needs to be done on the backend. It's provided to you simply to power your frontend.
 
@@ -308,166 +296,3 @@ Your backend is persistent in terms of data storage. That means the data will re
 Once the backend has started, you can view the API documentation by navigating to `http://localhost:[port]` in a web browser.
 
 The port that the backend runs on (and that the frontend can use) is specified in `frontend/src/config.js`. You can change the port in this file. This file exists so that your frontend knows what port to use when talking to the backend.
-
-## 4. Constraints & Assumptions
-
-### 4.1. Languages
-
- * You must implement this assignment in ReactJS. You cannot use other declarative frameworks, such as AngularJS, or VueJS.
- * You must use ReactJS solutions wherever possible, and avoid doing any direct DOM manipulation unless completely unavoidable (check with course staff).
- * You can use any CSS libraries that you would like, such as bootstrap or material-ui.
- * You are able to use and install any library that is available to install via `yarn install`.
-
-### 4.2. Browser Compatibility
- * You should ensure that your programs have been tested on one of the following two browsers:
-   * Locally, Google Chrome (various operating systems) - make sure is latest version.
-   * On CSE machines.
-
-### 4.3. Using code found online
- * You may use small amounts (&lt; 10 lines) of general purpose code (not specific to the assignment) obtained from a site such as Stack Overflow or other publically available resources. You should attribute clearly the source of this code in a comment with it. You can not otherwise use code written by another person.
-
-### 4.4. Other Requriements
- * The specification is intentionally vague to allow you to build frontend components however you think are visually appropriate. Their size, positioning, colour, layout, is in virtually all cases completely up to you. We require some basic criteria, but it's mainly dictating elements and behaviour.
- * Besides those described to avoid, you may use any other packages available on yarn.
- * The use of universal CSS is banned - you must use either CSS libraries (e.g. material-ui) or styled components.
-
-## 5. Teamwork
-
-This assignment may be completed in a team of two (pair). However, you are also welcome to complete it on your own, if you choose. The groups were organised and coordinated by the course coordinator separately.
-
-If you formed a pair, you will be unable to leave your pair unless under extreme circumstances. You will be assessed together for the assignment.
-
-If your contributions to the assignment are not approximately equal, then the teaching staff may make discretionary calls based on your gitlab history to award different marks to each student.
-
-<b>Please note: Your contributions will be measured based on the lines and commits contributed via gitlab. Please commit via your own machine or account.</b> If you're in a pair, your contributions will not be considered yours if it is your partner who pushes the code to gitlab.
-
-<b>Please note: When special consideration is granted for one individual in a pair, it will only extend the deadline for the person who gets special consideration. It does not extend for the other individual. On top of this, the person who receives special consideration is required to email the lecturer to notify them of how the work is split up prior to deadline.</b>
-
-## 6. Marking Criteria
-
-Your assignment will be hand-marked by tutor(s) in the course according to the criteria below.
-
-<table>
-	<tr>
-		<th>Criteria</th>
-		<th>Weighting</th>
-		<th>Description</th>
-	</tr>
-	<tr>
-		<td>Functionality of the Feature Set + Mobile Responsiveness</td>
-		<td>60%</td>
-		<td>
-			<ul>
-				<li>Features implemented that satisfy requirements as outlined in `2.1`, `2.2`, `2.3`, `2.4`, and `2.5` (for pairs).</li>
-				<li>Features implemented in a mobile responsive way that work on screens as small as 400px wide, 700px high</li>
-				<li>Responsive design will contribute up to one quarter of the marks of this section</li>
-				<li>You MUST update the progress.csv file in the root folder of this repository as you complete things partially or fully. The valid values are "NO", "PARTIAL", and "YES". Updating this is necessary so that your tutor knows what to focus on and what to avoid - giving them the best understanding of your work and provide you with marks you have earned.</li>
-			</ul>
-		</td>
-	</tr>
-	<tr>
-		<td>Linted Code</td>
-		<td>5%</td>
-		<td>
-			<ul>
-				<li>Submitted code is completely `eslint` compliant based on provided eslint configuration file.</li>
-			</ul>
-		</td>
-	</tr>
-	<tr>
-		<td>Code Style</td>
-		<td>10%</td>
-		<td>
-			<ul>
-				<li>Your code is clean, well commented, with well-named variables, and well laid out.</li>
-				<li>Code follows common ReactJS patterns that have been discussed in lectures</li>
-			</ul>
-		</td>
-	</tr>
-	<tr>
-		<td>Testing</td>
-		<td>15%</td>
-		<td>
-			<ul>
-				<li>Two thirds (10%) of the marks received from complying with requirements in section `2.7` in relation to **component testing**</li>
-				<li>One third (5%) of the marks received from complying with requirements in section `2.7` in relation to **ui testing**</li>
-				<li>Describe your approach to testing in `TESTING.md`</li>
-			</ul>
-		</td>
-	</tr>
-	<tr>
-		<td>UI/UX & Accessibility</td>
-		<td>10%</td>
-		<td>
-			<ul>
-				<li>Your application is usable and easy to navigate. No obvious usability issues or confusing layouts/flows.</li>
-				<li>Your application makes intelligent use of UI/UX principles and patterns discussed in the UI/UX lectures.</li>
-				<li>Your application follows standard accessibility lessons covered in lectures.</li>
-				<li>Describe any attempts you've made to improve the UI/UX or Accessibility in `UIUX.md`</li>
-			</ul>
-		</td>
-	</tr>
-	<tr>
-		<td>(Bonus Marks) Extra Features</td>
-		<td>5%</td>
-		<td>
-			<ul>
-				<li>Implementation of extra features that are not included in the spec.</li>
-				<li>Extra features should be non-trivial, have a clear justification for existing, and show either a form of technical, product, or creative flare.</li>
-				<li>Any extra features written down in `BONUS.md` in the project folder</li>
-				<li>Any bonus marks that extend your ass3 mark above 100% will bleed into other assignment marks, but cannot contribute outside of the 75% of the course that is allocated for assignment marks</li>
-				<li><b>Expectations placed on solo groups will be half of that of pairs to achieve the same mark.</b></li>
-			</ul>
-		</td>
-	</tr>
-</table>
-
-## 7. Originality of Work
-
-The work you submit must be your own work.  Submission of work partially or completely derived from
-any other person or jointly written with any other person is not permitted.
-
-The penalties for such an offence may include negative marks, automatic failure of the course and
-possibly other academic discipline. Assignment submissions will be examined both automatically and
-manually for such submissions.
-
-Relevant scholarship authorities will be informed if students holding scholarships are involved in
-an incident of plagiarism or other misconduct.
-
-Do not provide or show your assignment work to any other person &mdash; apart from the teaching
-staff of COMP6080.
-
-If you knowingly provide or show your assignment work to another person for any reason, and work
-derived from it is submitted, you may be penalized, even if the work was submitted without your
-knowledge or consent.  This may apply even if your work is submitted by a third party unknown to
-you.
-
-Every time you make commits or pushes on this repository, you are acknowledging that the work you
-submit is your own work (as described above).
-
-Note you will not be penalized if your work has the potential to be taken without your consent or
-knowledge.
-
-**PLEASE NOTE: To ensure the originality of your work, we are requiring that you regularly commit your work to git throughout the weeks this assignment has been released. Regular and small commits and critical. Failures to commit regularly (or at minimum, failures to commit in small chunks) may result in allegations of plagiarism**
-
-## 8. Submission
-
-This assignment is due *Friday 18th November, 10pm*.
-
-To submit your assignment, simply run the following command on a CSE terminal:
-
-`$ 6080 submit ass3 [groupname]`
-
-This will submit the latest commit on master as your submission.
-
-<b>If you are working in a pair, only one group member needs to submit</b>
-
-### Dryrun
-
-You can run a dryrun to sanity check your code runs basically by:
-1. Pushing your code to master on gitlab
-2. On a CSE terminal (vlab or lab machine), run `6080 ass3dryrun GROUP_NAME` where GROUP_NAME is the name of your group
-
-## 9. Late Submission Policy
-
-No late submission are accepted.
